@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from pydantic import BaseModel
 from typing import List, Optional
 from app.models.enums import ProductCategory
@@ -26,7 +28,7 @@ class ProductOut(BaseModel):
     description: Optional[str]
     category: ProductCategory
     definition: Optional[str]
-    updated_at: str
+    updated_at: datetime
     images: List[ProductImageOut]
 
     class Config:
