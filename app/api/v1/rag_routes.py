@@ -10,7 +10,7 @@ router = APIRouter(tags=["RAG"], dependencies=[Depends(get_current_user)])
 
 @router.post("/upload")
 async def upload_pdf(file: UploadFile = File(...)):
-    file_path = f"/tmp/{file.filename}"
+    file_path = f"/app/uploads/{file.filename}"
 
     with open(file_path, "wb") as buffer:
         shutil.copyfileobj(file.file, buffer)

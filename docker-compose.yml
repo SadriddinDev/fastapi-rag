@@ -8,6 +8,8 @@ services:
       - "8000:8000"
     volumes:
       - .:/app
+      - ./chroma_db:/app/chroma_db
+      - ./uploads:/app/uploads
     env_file:
       - .env
     depends_on:
